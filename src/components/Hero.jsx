@@ -5,13 +5,17 @@ export const Hero = () => {
       <div data-aos="fade-right"
          data-aos-offset="300"
          data-aos-easing="ease-in-sine" className='max-w-xl ml-[5%] z-10 mt-[90%] md:mt-[60%] lg:mt-0'>
-        <div className="backdrop-blur-md dark:bg-black/60 shadow-[0_2px_8px_rgba(0,0,0,0.15)] relative w-[95%] sm:w-48 h-10 bg-gradient-to-r from-[#656565] to-[#e99b63] shadow-[0_0_15px_rgba(255,255,255,0.4)] rounded-full">
-          <div className="text-sm absolute inset-[3px] bg-black rounded-full flex items-center justify-center gap-1">
-            {/* <i class='bx bx-diamond'></i> */}
+        
+        <div className="relative w-[95%] sm:w-48 h-10 
+          bg-[length:200%_auto] animate-gradient-move 
+          bg-gradient-to-r from-[#656565] via-[#7f42a7] via-[#6600c5] via-[#e99b63] to-[#656565]
+          backdrop-blur-md dark:bg-black/40 
+          shadow-[0_0_15px_rgba(255,255,255,0.3)] rounded-full overflow-hidden">
+          <div className="text-xs absolute inset-[1px] bg-black rounded-full flex items-center justify-center gap-1 text-white tracking-[1px]">
             Full Stack Developer
           </div>
         </div>
-
+      
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-wider my-8">
           Email For 
           <br />

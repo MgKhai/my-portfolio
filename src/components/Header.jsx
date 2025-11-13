@@ -44,32 +44,32 @@ const Header = () => {
           Contact
         </a>
       </nav> */}
-      <div className="hidden flex font-sans text-sm max-w-fit fixed top-10 inset-x-0 mx-auto 
+      <div className=" flex font-sans text-sm max-w-fit fixed top-10 inset-x-0 mx-auto 
       border border-white/10 rounded-full backdrop-blur-md dark:bg-black/60 
       shadow-[0_2px_8px_rgba(0,0,0,0.15)] z-[5000] px-10 py-4 items-center justify-center 
       space-x-6 transition-all duration-300">
       
-        <a href="#home" className="relative text-neutral-700 dark:text-neutral-50 
+        <a href="#home" className="text-xs relative text-neutral-700 dark:text-neutral-50 
         hover:text-[#e99b63] transition-colors duration-300">
           <span className="sm:block">Home</span>
         </a>
 
-        <a href="#about" className="relative text-neutral-700 dark:text-neutral-50 
+        <a href="#about" className="text-xs relative text-neutral-700 dark:text-neutral-50 
         hover:text-[#e99b63] transition-colors duration-300">
           <span className="sm:block">About</span>
         </a>
 
-        <a href="#projects" className="relative text-neutral-700 dark:text-neutral-50 
+        <a href="#projects" className="text-xs relative text-neutral-700 dark:text-neutral-50 
         hover:text-[#e99b63] transition-colors duration-300">
           <span className="sm:block">Projects</span>
         </a>
 
-        <a href="#experience" className="relative text-neutral-700 dark:text-neutral-50 
+        <a href="#experience" className="text-xs relative text-neutral-700 dark:text-neutral-50 
         hover:text-[#e99b63] transition-colors duration-300">
           <span className="sm:block">Experience</span>
         </a>
 
-        <a href="#contact" className="relative text-neutral-700 dark:text-neutral-50 
+        <a href="#contact" className="text-xs relative text-neutral-700 dark:text-neutral-50 
         hover:text-[#e99b63] transition-colors duration-300">
           <span className="sm:block">Contact</span>
         </a>
