@@ -14,9 +14,14 @@ export default {
                     '0%': { 'background-position': '0% 50%' },
                     '100%': { 'background-position': '200% 50%' },
                 },
+                liquid: {
+                    "0%": { 'backgroundPosition': "0% 50%" },
+                    "100%": { 'backgroundPosition': "200% 50%" },
+                },
             },
             animation: {
                 'gradient-move': 'moveGradient 4s linear infinite',
+                "liquid-reflect": "liquid 3s linear infinite",
             },
             fontSize: {
                 'tiny': '4px',

@@ -44,7 +44,7 @@ const Header = () => {
           Contact
         </a>
       </nav> */}
-      <div className=" flex font-sans text-sm max-w-fit fixed top-10 inset-x-0 mx-auto 
+      <div className="hidden flex font-sans text-sm max-w-fit fixed top-10 inset-x-0 mx-auto 
       border border-white/10 rounded-full backdrop-blur-md dark:bg-black/60 
       shadow-[0_2px_8px_rgba(0,0,0,0.15)] z-[5000] px-10 py-4 items-center justify-center 
       space-x-6 transition-all duration-300">
