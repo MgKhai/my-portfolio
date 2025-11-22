@@ -1,5 +1,5 @@
 import monkeyimage from "../assets/images/monkey.png";
-import blackdot from "../assets/images/blackdot.jpg";
+import backgroundimage from "../assets/images/skin.jpg";
 import { ArrowDown } from "../components/ArrowDown";
 import { StarIcon } from "../components/Star";
 import Image from "next/image";
@@ -12,7 +12,7 @@ export const HeroSection = () => {
         <div
           className="absolute inset-0 -z-30 opacity-5"
           style={{
-            backgroundImage: `url(${blackdot.src})`,
+            backgroundImage: `url(${backgroundimage.src})`,
           }}
         ></div>
         <div className="size-[620px] hero-ring"></div>
