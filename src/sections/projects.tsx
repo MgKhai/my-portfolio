@@ -1,32 +1,50 @@
 // import portfolioPage from '@/assets/images/portfolio_testing.png';
 // import pizzaOrderPage from '@/assets/images/pizza_order_management.png';
 import adidasTurkey from "@/assets/images/adidas_turkey.png";
+import bootstrapPortfolio from "@/assets/images/portfolio_testing.png";
+import pizzaManagement from "@/assets/images/pizza_order_management.png";
 import Image from "next/image";
-import backgroundimage from "../assets/images/skin.jpg";
+import backgroundimage from "../assets/images/pixeldot.jpeg";
 
 const portfolioProjects = [
   {
-    company: "Acme Corp",
-    title: "Adidas Turkey",
-    year: "2022",
-    results: [
-      { title: "Enhanced user experience by 300" },
-      { title: "Enhanced user experience by 300" },
-      { title: "Enhanced user experience by 300" },
-    ],
+    title: "Pizza Order Management System",
+    description:
+      "A full-stack Pizza Order Management Website built using Laravel and MySQL, with a responsive HTML, CSS, Bootstrap, and JavaScript frontend. This project allows users to browse pizzas, place orders, and lets admins manage menu items and track customer orders efficiently.",
     link: "#",
-    image: adidasTurkey,
+    language: [
+      { title: "bootstrap", icon: "/icons/bootstrap-original.svg" },
+      { title: "laravel", icon: "/icons/laravel-original.svg" },
+      { title: "mysql", icon: "/icons/mysql-original.svg" },
+      { title: "jquery", icon: "/icons/jquery-original.svg" },
+
+    ],
+    github: "https://github.com/MgKhai/pizza-order-management-system",
+    image: pizzaManagement,
   },
   {
-    company: "Acme Corp",
-    title: "Adidas ",
-    year: "2022",
-    results: [
-      { title: "Enhanced user experience by 300" },
-      { title: "Enhanced user experience by 300" },
-      { title: "Enhanced user experience by 300" },
-    ],
+    title: "Bootstrap Portfolio",
+    description:
+      "A personal portfolio website built using HTML, CSS, and Bootstrap to showcase projects, skills, and experience. Designed with a clean and responsive layout for all devices. This project serves as a practice for front-end development and Bootstrap styling.",
     link: "#",
+    language: [
+      { title: "html", icon: "/icons/html5-original.svg" },
+      { title: "css", icon: "/icons/css3-original.svg" },
+      { title: "bootstrap", icon: "/icons/bootstrap-original.svg" },
+    ],
+    github: "https://github.com/MgKhai/portfolio",
+    image: bootstrapPortfolio,
+  },
+  {
+    title: "Adidas Turkey",
+    description:
+      "This project is a basic clone of the Adidas Turkey website created for learning purposes. It focuses on building clean layouts, navigation bars, product sections, and responsive design using only HTML and CSS. No frameworks or JavaScript used.",
+    link: "#",
+    language: [
+      { title: "html", icon: "/icons/html5-original.svg" },
+      { title: "css", icon: "/icons/css3-original.svg" },
+    ],
+    github: "https://github.com/MgKhai/adidas-turkey",
     image: adidasTurkey,
   },
 ];
@@ -61,32 +79,57 @@ export const ProjectsSection = () => {
 
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
-                  <div className="bg-gradient-to-r from from-emerald-300 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
-                    <span>{project.company}</span>
-                    <span>&bull;</span>
-                    <span>{project.year}</span>
-                  </div>
-
                   <h3 className="font-serif text-2xl mt-2 md:mt-5 md:text-4xl">
                     {project.title}
                   </h3>
                   <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
-                  <ul className="flex flex-col gap-4 mt-4 md:mt-5">
-                    {project.results.map((result, index) => (
-                      <li
-                        key={index}
-                        className="flex gap-2 text-sm md:text-base text-white/50"
-                      >
-                        <span>{result.title}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div>
-                    <a href={project.link}>
-                      <button className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
-                        Visit Live Site
-                      </button>
-                    </a>
+                  <div className="flex flex-col gap-4 mt-4 md:mt-5">
+                    <p className="flex gap-2 text-sm md:text-base text-white/50">
+                      <span>{project.description}</span>
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-between mt-6">
+                    {/* Left: Language Icons */}
+                    <div className="flex -space-x-2">
+                      {project.language?.map((lang, index) => (
+                        <div
+                          key={index}
+                          className="w-10 h-10 rounded-full border border-gray bg-[#0f0f1a] flex items-center justify-center"
+                        >
+                          <Image
+                            src={lang.icon}
+                            alt={lang.title}
+                            width={16}
+                            height={16}
+                            className="w-6 h-6 object-contain"
+                          />
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Right: GitHub & Rocket Icons */}
+                    <div className="flex items-center gap-2">
+                      <a href={project.github} target="_blank">
+                        <div className="w-10 h-10 rounded-full bg-[#FFFFFF] flex items-center justify-center">
+                          <Image
+                            src="/icons/github-original.svg"
+                            alt="GitHub"
+                            width={16}
+                            height={16}
+                            className="w-10 h-10 object-contain"
+                          />
+                        </div>
+                      </a>
+                      <a href="#">
+                        <Image
+                          src="/icons/rocket.svg"
+                          alt="Rocket"
+                          width={16}
+                          height={16}
+                          className="w-8 h-8"
+                        />
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div className="relative">

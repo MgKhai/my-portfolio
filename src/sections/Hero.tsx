@@ -1,5 +1,5 @@
 import monkeyimage from "../assets/images/monkey.png";
-import backgroundimage from "../assets/images/skin.jpg";
+import backgroundimage from "../assets/images/blackdot.jpg";
 import { ArrowDown } from "../components/ArrowDown";
 import { StarIcon } from "../components/Star";
 import Image from "next/image";
@@ -56,10 +56,10 @@ export const HeroSection = () => {
       <div className="container">
         <div className="flex flex-col items-center">
           <Image src={monkeyimage} className="size-[100px]" alt="cool monkey" />
-          <div className="bg-gray-950 border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
-            <div className="bg-green-500 size-2.5 rounded-full"></div>
+          <div className="bg-gray-950 border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg backdrop-blur">
+            <div className="bg-green-500 size-2.5 rounded-full animate-twinkle"></div>
             <div className="text-sm font-semibold font-medium">
-              Avaliable for new projects
+              Mg Khai, Full-Stack Developer.
             </div>
           </div>
         </div>

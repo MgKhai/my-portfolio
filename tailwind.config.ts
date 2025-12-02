@@ -25,8 +25,18 @@ const config: Config = {
       fontFamily: {
         sans: 'var(--font-sans)',
         serif: 'var(--font-serif)',
-      }
+      },
+      keyframes: {
+        twinkle: {
+          '0%, 100%': { opacity: '0.2' },
+          '50%': { opacity: '1' },
+        },
+      },
     },
+    animation: {
+      twinkle: 'twinkle 2s ease-in-out infinite',
+    },
+    
   },
   plugins: [],
 };
