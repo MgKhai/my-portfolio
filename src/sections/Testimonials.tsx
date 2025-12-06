@@ -49,7 +49,7 @@ export const TestimonialSection = () => {
         <SectionHeader
           eyebrow="My Expertise"
           title="What I Bring to The Table"
-          description="A quick overview of my core development skills and strengths."
+          description="A quick overview of my core development skills and strengths"
         />
         <div className="mt-16 lg:mt-24 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex gap-8 flex-none">
