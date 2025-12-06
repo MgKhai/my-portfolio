@@ -1,29 +1,45 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SectionHeader } from "@/components/SectionHeader";
-import { faRocket } from "@fortawesome/free-solid-svg-icons";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
-import Image from "next/image";
-import backgroundimage from "../assets/images/pixeldot.jpeg";
+import { faCode,faTvAlt,faCloud,faGaugeHigh,faBug } from "@fortawesome/free-solid-svg-icons";
+import { faGithubAlt,faKeycdn } from "@fortawesome/free-brands-svg-icons";
 import { Card } from "@/components/Card";
+
 
 const testimonials = [
   {
-    name: "Alex",
-    position: "Marketing Manager",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti explicabo quo exercitationem dicta molestiae in tempore saepe assumenda? Ducimus perspiciatis fugiat facere commodi omnis cum nemo nobis distinctio sunt eius.",
+    name: "Back-End",
+    text: "Builds reliable and efficient server-side applications with clean architecture, secure API design, and organized data flow. Focuses on maintainable code and strong logic handling using modern backend frameworks.",
     avater: faCode,
   },
   {
-    name: "R",
-    position: "Marketing Manager",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti explicabo quo exercitationem dicta molestiae in tempore saepe assumenda? Ducimus perspiciatis fugiat facere commodi omnis cum nemo nobis distinctio sunt eius.",
-    avater: faRocket,
+    name: "Performance",
+    text: "Improves application speed through efficient database queries, reduced processing time, and optimized API responses. Ensures smooth performance across different devices and environments.",
+    avater: faGaugeHigh,
   },
   {
-    name: "VBB",
-    position: "Marketing Manager",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti explicabo quo exercitationem dicta molestiae in tempore saepe assumenda? Ducimus perspiciatis fugiat facere commodi omnis cum nemo nobis distinctio sunt eius.",
-    avater: faRocket,
+    name: "Version Control",
+    text: "Uses Git for clean project organization, structured branching, and smooth collaboration. Manages commits, reviews code, and maintains version history to ensure stable development.",
+    avater: faGithubAlt,
+  },
+  {
+    name: "Testing & Debugging",
+    text: "Identifies errors, writes test cases, and applies debugging tools to ensure stability and correct application behavior. Focuses on preventing issues before deployment.",
+    avater: faBug,
+  },
+  {
+    name: "Encryption & Security",
+    text: "Implements secure authentication, encrypted data handling, and protection best practices. Ensures user information remains safe and system vulnerabilities are minimized.",
+    avater: faKeycdn,
+  },
+  {
+    name: "Responsive Design",
+    text: "Creates layouts that adapt to all screen sizes with clean, accessible, and mobile-first design. Focuses on usability and visual consistency.",
+    avater: faTvAlt,
+  },
+  {
+    name: "Database",
+    text: "Designs and maintains efficient databases with clean structure, fast queries, and reliable data storage. Supports stable backend operations through proper indexing and optimization.",
+    avater: faCloud,
   },
 ];
 export const TestimonialSection = () => {
@@ -31,9 +47,9 @@ export const TestimonialSection = () => {
     <div className="py-16 lg:py-24">
       <div className="container">
         <SectionHeader
-          eyebrow="Happy Clients"
-          title="What Clients Say about Me"
-          description="Don't just take my word for it. See what my clients have to say about my word."
+          eyebrow="My Expertise"
+          title="What I Bring to The Table"
+          description="A quick overview of my core development skills and strengths."
         />
         <div className="mt-16 lg:mt-24 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex gap-8 flex-none">
@@ -44,8 +60,7 @@ export const TestimonialSection = () => {
                     <FontAwesomeIcon icon={testimonial.avater} className="size-6 max-h-full" />
                   </div>
                   <div>
-                    <div className="font-semibold">{testimonial.name}</div>
-                    <div className="text-sm text-white/40">{testimonial.position}</div>
+                    <div className="text-lg font-bold">{testimonial.name}</div>
                   </div>
                 </div>
                 <p className="mt-4 md:mt-6 text-sm md:text-base">{testimonial.text}</p>
