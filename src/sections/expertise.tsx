@@ -42,7 +42,7 @@ const testimonials = [
     avater: faCloud,
   },
 ];
-export const TestimonialSection = () => {
+export const ExpertiseSection = () => {
   return (
     <div className="py-16 lg:py-24">
       <div className="container">
