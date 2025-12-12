@@ -9,6 +9,7 @@ import {
 } from '@tabler/icons-react';
 import { SendHorizonal } from 'lucide-react';
 import { FloatingDock } from '@/components/FloatingDock'; 
+import backgroundimage from "../assets/images/pixeldot.jpeg";
 
 const dockItems = [
   { title: 'Email', icon: <IconMail size={18} />, href: 'mailto:example@gmail.com' },
@@ -23,12 +24,10 @@ export const ContactSection = () => {
     <div className="py-16 lg:py-24">
       <div className='container'>
    
-        <div className="absolute inset-0 bg-[url('https://svgshare.com/i/ubG.svg')] opacity-20"></div>
-
-        <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 px-6">
+        <div className=" max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 px-6">
         
           <div className="flex flex-col justify-center ">
-            <h1 className="text-4xl sm:text-5xl text-gray-200 leading-tight font-serif">
+            <h1 className="text-3xl md:text-5xl text-gray-200 leading-tight font-serif">
               Ready to Bring Your <br /> Ideas to Life?
             </h1>
 
@@ -45,7 +44,13 @@ export const ContactSection = () => {
             />
           </div>
 
-          <div className="bg-black/40 backdrop-blur-lg border border-white/10 rounded-2xl p-6 shadow-xl">
+          <div className="relative rounded-xl p-6 shadow-lg">
+          <div
+              className="absolute rounded-xl inset-0 -z-10 opacity-5"
+              style={{
+                backgroundImage: `url(${backgroundimage.src})`,
+              }}
+            />
             <h2 className="uppercase font-semibold">Get in Touch</h2>
             <p className="text-sm text-gray-400 mt-1 mb-6 ">
               Have a question, project idea, or just want to connect?
