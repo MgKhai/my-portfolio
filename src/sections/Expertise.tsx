@@ -45,7 +45,7 @@ const expertises = [
 ];
 export const ExpertiseSection = () => {
   return (
-    <div className="py-16 lg:py-24">
+    <div id="about" className="py-16 lg:py-24">
       <div className="container">
         <SectionHeader
           eyebrow="My Expertise"

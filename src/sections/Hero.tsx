@@ -7,7 +7,7 @@ import { HeroOrbit } from "@/components/HeroOrbit";
 
 export const HeroSection = () => {
   return (
-    <div className="min-h-screen relative z-0 overflow-x-clip flex items-center">
+    <div id="home" className="min-h-screen relative z-0 overflow-x-clip flex items-center">
       <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom, transparent, black_10%, black_70%, transparent)">
         <div
           className="absolute inset-0 -z-30 opacity-5"

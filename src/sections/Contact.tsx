@@ -72,7 +72,7 @@ export const ContactSection = () => {
   };
 
   return (
-    <div className="py-16 lg:py-24">
+    <div id='contact' className="py-16 lg:py-24">
       <div className='container'>
    
         <div className=" max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 px-6">
