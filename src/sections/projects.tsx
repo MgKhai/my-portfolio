@@ -70,7 +70,7 @@ export const ProjectsSection = () => {
                   </h3>
                   <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
                   <div className="flex flex-col gap-4 mt-4 md:mt-5">
-                    <p className="flex gap-2 text-sm md:text-base text-white/50">
+                    <p className="flex gap-2 text-sm md:text-base text-gray-300 leading-relaxed">
                       <span>{project.description}</span>
                     </p>
                   </div>

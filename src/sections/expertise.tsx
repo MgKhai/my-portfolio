@@ -63,7 +63,7 @@ export const ExpertiseSection = () => {
                     <div className="text-lg font-bold">{expertise.name}</div>
                   </div>
                 </div>
-                <p className="mt-4 md:mt-6 text-sm md:text-base">{expertise.text}</p>
+                <p className="mt-4 md:mt-6 text-sm text-gray-300 md:text-base">{expertise.text}</p>
               </Card>
             ))}
           </div>
