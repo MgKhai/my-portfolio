@@ -5,7 +5,8 @@ import { TapeSection } from "@/sections/Tape";
 import { ExpertiseSection } from "@/sections/Expertise";
 import { ToolkitSection } from "@/sections/Toolkit";
 import { AcademicSection } from "@/sections/Academic";
-import { ContactSection } from "@/sections/Contact"
+import { ContactSection } from "@/sections/Contact";
+import { FooterSection } from "@/sections/Footer";
 
 export default function Home () {
   return (
@@ -18,6 +19,7 @@ export default function Home () {
       <ToolkitSection />
       <AcademicSection />
       <ContactSection />
+      <FooterSection />
     </div>
   )
 }
