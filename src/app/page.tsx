@@ -13,10 +13,10 @@ export default function Home () {
     <div>
       <Header />
       <HeroSection />
-      <ProjectsSection />
-      <TapeSection />
       <ExpertiseSection />
       <ToolkitSection />
+      <TapeSection />
+      <ProjectsSection />
       <AcademicSection />
       <ContactSection />
       <FooterSection />

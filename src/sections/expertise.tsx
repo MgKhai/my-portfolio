@@ -3,6 +3,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { faCode,faTvAlt,faCloud,faGaugeHigh,faBug } from "@fortawesome/free-solid-svg-icons";
 import { faGithubAlt,faKeycdn } from "@fortawesome/free-brands-svg-icons";
 import { Card } from "@/components/Card";
+import { Fragment } from "react/jsx-runtime";
 
 
 const expertises = [
@@ -51,21 +52,26 @@ export const ExpertiseSection = () => {
           title="What I Bring to The Table"
           description="A quick overview of my core development skills and strengths"
         />
-        <div className="mt-16 lg:mt-24 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-          <div className="flex gap-8 flex-none">
-          {expertises.map((expertise) => (
-              <Card key={expertise.name} className="max-w-xs md:p-8 md:max-w-md">
-                <div className="flex gap-4 items-center ">
-                  <div className="size-14 bg-gray-700 inline-flex items-center justify-center rounded-full flex-shrink-0">
-                    <FontAwesomeIcon icon={expertise.avatar} className="size-6 max-h-full" />
+        <div className="mt-16 lg:mt-20 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] py-4 -my-4">
+          <div className="flex gap-8 pr-8 flex-none animate-move-left [animation-duration:90s] hover:[animation-play-state:paused]">
+          {[...new Array(2)].map((_, idx) => (
+            <Fragment key={idx}>
+              {expertises.map((expertise) => (
+                <Card key={expertise.name} className="max-w-xs md:p-8 md:max-w-md hover:-rotate-3 transition duration-300">
+                  <div className="flex gap-4 items-center ">
+                    <div className="size-14 bg-gray-700 inline-flex items-center justify-center rounded-full flex-shrink-0">
+                      <FontAwesomeIcon icon={expertise.avatar} className="size-6 max-h-full" />
+                    </div>
+                    <div>
+                      <div className="text-lg font-bold">{expertise.name}</div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-lg font-bold">{expertise.name}</div>
-                  </div>
-                </div>
-                <p className="mt-4 md:mt-6 text-sm text-gray-300 md:text-base">{expertise.text}</p>
-              </Card>
-            ))}
+                  <p className="mt-4 md:mt-6 text-sm text-gray-300 md:text-base">{expertise.text}</p>
+                </Card>
+              ))}
+            </Fragment>
+          ))}
+  
           </div>
         </div>
       </div>

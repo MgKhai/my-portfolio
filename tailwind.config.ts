@@ -1,3 +1,4 @@
+import { transform } from "next/dist/build/swc/generated-native";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -26,17 +27,21 @@ const config: Config = {
         sans: 'var(--font-sans)',
         serif: 'var(--font-serif)',
       },
+      animation: {
+        'move-left': 'move-left 10s linear infinite', 
+        'move-right': 'move-right 10s linear infinite', 
+      },
       keyframes: {
-        twinkle: {
-          '0%, 100%': { opacity: '0.2' },
-          '50%': { opacity: '1' },
+        'move-left': {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'move-right': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0%)' },
         },
       },
-    },
-    animation: {
-      twinkle: 'twinkle 2s ease-in-out infinite',
-    },
-    
+    },    
   },
   plugins: [],
 };

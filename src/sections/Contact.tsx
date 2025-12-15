@@ -12,11 +12,11 @@ import { FloatingDock } from '@/components/FloatingDock';
 import backgroundimage from "../assets/images/pixeldot.jpeg";
 
 const dockItems = [
-  { title: 'Email', icon: <IconMail size={18} />, href: 'mailto:example@gmail.com' },
-  { title: 'LinkedIn', icon: <IconBrandLinkedin size={18} />, href: '#' },
-  { title: 'WhatsApp', icon: <IconBrandWhatsapp size={18} />, href: '#' },
-  { title: 'X', icon: <IconBrandX size={18} />, href: '#' },
-  { title: 'GitHub', icon: <IconBrandGithub size={18} />, href: '#' },
+  { title: 'Email', icon: <IconMail size={18} />, href: 'mailto:khainglwinthantycc@gmail.com' },
+  { title: 'LinkedIn', icon: <IconBrandLinkedin size={18} />, href: 'https://www.linkedin.com/in/khaing-lwin-thant-20740a2b6/' },
+  { title: 'WhatsApp', icon: <IconBrandWhatsapp size={18} />, href: 'https://wa.me/905053893242' },
+  { title: 'X', icon: <IconBrandX size={18} />, href: 'https://twitter.com/khainglwinthant' },
+  { title: 'GitHub', icon: <IconBrandGithub size={18} />, href: 'https://github.com/MgKhai' },
 ];
 
 export const ContactSection = () => {
@@ -44,9 +44,9 @@ export const ContactSection = () => {
             />
           </div>
 
-          <div className="relative rounded-xl p-6 shadow-lg">
+          <div className="bg-gray-800 rounded-3xl relative z-0 overflow-hidden after:z-10 after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 after:pointer-events-none p-6">
           <div
-              className="absolute rounded-xl inset-0 -z-10 opacity-5"
+              className="absolute inset-0 -z-10 opacity-5"
               style={{
                 backgroundImage: `url(${backgroundimage.src})`,
               }}

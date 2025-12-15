@@ -9,7 +9,7 @@ const portfolioProjects = [
   {
     title: "Pizza Order Management System",
     description:
-      "A full-stack Pizza Order Management Website built using Laravel and MySQL, with a responsive HTML, CSS, Bootstrap, and JavaScript frontend. This project allows users to browse pizzas, place orders, and lets admins manage menu items and track customer orders efficiently.",
+      "A full-stack Pizza Order Management Website allows users to browse pizzas, place orders, and lets admins manage menu items and track customer orders efficiently.",
     link: "#",
     language: [
       { title: "bootstrap", icon: "/icons/bootstrap-original.svg" },
@@ -24,7 +24,7 @@ const portfolioProjects = [
   {
     title: "Bootstrap Portfolio",
     description:
-      "A personal portfolio website built using HTML, CSS, and Bootstrap to showcase projects, skills, and experience. Designed with a clean and responsive layout for all devices. This project serves as a practice for front-end development and Bootstrap styling.",
+      "A personal portfolio website built using HTML, CSS, and Bootstrap to showcase projects, skills, and experience. Designed with a clean and responsive layout for all devices.",
     link: "#",
     language: [
       { title: "html", icon: "/icons/html5-original.svg" },
@@ -58,10 +58,13 @@ export const ProjectsSection = () => {
         description="See how I transformed concepts into engaging digital experiences" 
         />
         <div className="flex flex-col mt-10 md:mt-20 gap-20">
-          {portfolioProjects.map((project) => (
+          {portfolioProjects.map((project, projectIndex) => (
             <Card
               key={project.title}
-              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20"
+              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky"
+              style={{
+                top: `calc(64px + ${projectIndex * 40}px`
+              }}
             >
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
@@ -106,7 +109,7 @@ export const ProjectsSection = () => {
                           />
                         </div>
                       </a>
-                      <a href="#">
+                      {/* <a href="#">
                         <Image
                           src="/icons/rocket.svg"
                           alt="Rocket"
@@ -114,7 +117,7 @@ export const ProjectsSection = () => {
                           height={16}
                           className="w-8 h-8"
                         />
-                      </a>
+                      </a> */}
                     </div>
                   </div>
                 </div>

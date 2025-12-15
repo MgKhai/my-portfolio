@@ -23,7 +23,7 @@ export const EducationCard = ({
   image,
 }: EducationCardProps) => {
   return (
-    <div className="rounded-xl relative border border-white/10 bg-white/5 backdrop-blur-md p-5 hover:border-white/20 ">
+    <div className="bg-gray-800 rounded-3xl relative z-0 overflow-hidden after:z-10 after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 after:pointer-events-none p-6 hover:border-white/20 ">
       <div
         className="absolute rounded-xl inset-0 -z-10 opacity-5"
         style={{
@@ -37,8 +37,8 @@ export const EducationCard = ({
         </div>
 
         {/* Content */}
-        <div className="flex-1">
-          <h3 className="mt-1 md:text-lg text-base font-bold text-white">{degree}</h3>
+        <div className="flex-1 items-center justify-center">
+          <h3 className="mt-1 md:text-lg text-base font-bold text-white ">{degree}</h3>
         </div>
       </div>
       <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />

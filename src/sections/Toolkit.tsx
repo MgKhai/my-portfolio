@@ -1,6 +1,7 @@
 import { SectionHeader } from "@/components/SectionHeader";
 import Image from "next/image";
 import { GlowIcon } from "@/components/GlowIcon";
+import { Fragment } from "react/jsx-runtime";
 
 const techIcons = [
   "/icons/html5-original.svg",
@@ -32,12 +33,16 @@ export const ToolkitSection = () => {
         />
       </div>
       <div className="mt-5 p-5 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-        <div className="flex gap-8 flex-none">
-          {techIcons.map((icon, index) => (
-            <GlowIcon key={index}>
-              <Image src={icon} alt="Tech icon" width={36} height={36} />
-            </GlowIcon>
-          ))}
+        <div className="flex gap-8 flex-none animate-move-right [animation-duration:50s]">
+        {[...new Array(2)].map((_, idx) => (
+        <Fragment key={idx}>
+        {techIcons.map((icon, index) => (
+          <GlowIcon key={index}>
+            <Image src={icon} alt="Tech icon" width={36} height={36} />
+          </GlowIcon>
+        ))}
+      </Fragment>
+        ))}
         </div>
       </div>
     </div>
