@@ -1,5 +1,7 @@
 "use client";
 
+
+import { useState, ChangeEvent, FormEvent } from 'react'; 
 import {
   IconMail,
   IconBrandLinkedin,
@@ -19,7 +21,56 @@ const dockItems = [
   { title: 'GitHub', icon: <IconBrandGithub size={18} />, href: 'https://github.com/MgKhai' },
 ];
 
+
+interface FormData {
+    name: string;
+    email: string;
+    message: string;
+}
+
 export const ContactSection = () => {
+
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(''); 
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+
+  const handleSubmit = async (e: FormEvent) => {
+      e.preventDefault();
+      setLoading(true);
+      setStatus(''); 
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+          setStatus('success');
+          setFormData({ name: '', email: '', message: '' }); 
+        } else {
+          setStatus('error');
+        }
+      } catch (error) {
+        console.error('Submission Error:', error);
+        setStatus('error');
+      } finally {
+        setLoading(false);
+      }
+  };
+
   return (
     <div className="py-16 lg:py-24">
       <div className='container'>
@@ -32,7 +83,7 @@ export const ContactSection = () => {
             </h1>
 
             <p className="mt-4 text-gray-400 max-w-lg">
-              If yore looking for innovative solutions or creative collaboration, 
+              If you&apos;re looking for innovative solutions or creative collaboration, 
               I&apos;m here to help. Get in touch today, and let&apos;s discuss how we can 
               make your project a reality!
             </p>
@@ -56,32 +107,64 @@ export const ContactSection = () => {
               Have a question, project idea, or just want to connect?
             </p>
 
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
-                <label className="text-sm text-gray-300">Your name</label>
-                <input className="w-full bg-transparent placeholder:text-slate-400 text-slate-400 text-sm border border-slate-500 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-teal-500 hover:border-teal-300 shadow-sm focus:shadow" placeholder="Tyler" type='text' />
+                <label htmlFor="name-input" className="text-sm text-gray-300">Your name</label>
+                <input 
+                  id="name-input" 
+                  name="name" 
+                  value={formData.name} 
+                  onChange={handleChange} 
+                  className="w-full bg-transparent placeholder:text-slate-400 text-slate-400 text-sm border border-slate-500 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-teal-500 hover:border-teal-300 shadow-sm focus:shadow" 
+                  placeholder="Tyler" 
+                  type='text' 
+                  required
+                />
               </div>
 
               <div>
-                <label className="text-sm text-gray-300">Email Address</label>
-                <input className="w-full bg-transparent placeholder:text-slate-400 text-slate-400 text-sm border border-slate-500 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-teal-500 hover:border-teal-300 shadow-sm focus:shadow" placeholder="*****@gmail.com" type='email' />
+                <label htmlFor="email-input" className="text-sm text-gray-300">Email Address</label>
+                <input 
+                  id="email-input" 
+                  name="email" 
+                  value={formData.email} 
+                  onChange={handleChange} 
+                  className="w-full bg-transparent placeholder:text-slate-400 text-slate-400 text-sm border border-slate-500 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-teal-500 hover:border-teal-300 shadow-sm focus:shadow" 
+                  placeholder="*****@gmail.com" 
+                  type='email' 
+                  required
+                />
               </div>
 
               <div>
-                <label className="text-sm text-gray-300">Your message</label>
+                <label htmlFor="message-input" className="text-sm text-gray-300">Your message</label>
                 <textarea
+                  id="message-input"
+                  name="message" 
+                  value={formData.message} 
+                  onChange={handleChange} 
                   placeholder="Your message"
                   rows={4}
                   className="w-full bg-transparent placeholder:text-slate-400 text-slate-400 text-sm border border-slate-500 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-teal-500 hover:border-teal-300 shadow-sm focus:shadow"
+                  required
                 ></textarea>
               </div>
+
+              {/* Status Messages */}
+              {status === 'success' && (
+                <p className="text-sm text-emerald-400 text-center">Message sent successfully! I will respond soon.</p>
+              )}
+              {status === 'error' && (
+                <p className="text-sm text-red-400 text-center">Failed to send message. Please check your network or try the email link.</p>
+              )}
 
               <div className="flex justify-center">
                 <button
                   type="submit"
-                  className="px-6 py-2 mt-4 rounded-md font-sans bg-white/10 border border-white/20 text-gray-200  hover:bg-white/20 flex items-center gap-2"
+                  disabled={loading}
+                  className="px-6 py-2 mt-4 rounded-md font-sans bg-white/10 border border-white/20 text-gray-200  hover:bg-white/20 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send it now <SendHorizonal />
+                  {loading ? 'Sending...' : 'Send it now'} <SendHorizonal />
                 </button>
               </div>
             </form>
@@ -91,5 +174,3 @@ export const ContactSection = () => {
     </div>
   );
 }
-
-
