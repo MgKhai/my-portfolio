@@ -16,7 +16,6 @@ export const Header = () => {
         setIsVisible(false);
       }
     } else {
-      // Scrolling UP
       setIsVisible(true);
     }
 
