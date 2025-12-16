@@ -71,7 +71,7 @@ export const AcademicSection = () => {
         {/* TIMELINE */}
         <div
           ref={timelineRef}
-          className="relative mt-16 [--timeline-offset:8em] md:[--timeline-offset:9.5em]"
+          className="relative mt-16 [--timeline-offset:12em] lg:[--timeline-offset:9.5em]"
         >
           {/* Background Line */}
           <div
