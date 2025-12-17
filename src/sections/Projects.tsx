@@ -72,12 +72,18 @@ export const ProjectsSection = () => {
           description="See how I transformed concepts into engaging digital experiences" 
         />
         <div className="flex flex-col mt-10 md:mt-20 gap-20">
-          {portfolioProjects.map((project, projectIndex) => {
+        {portfolioProjects.map((project, projectIndex) => {
             let projectMedia;
-
             if (project.title.includes("API")) {
               projectMedia = (
-                <div className=" mt-8 -mb-6 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-full max-h-[170px]  md:min-w-[500px] md:min-h-[300px]">
+                <div className=" mt-8 -mb-4 
+                  md:mt-10
+                  md:min-w-[400px] 
+                  md:h-[350px]     
+                  lg:mt-0 
+                  lg:absolute 
+                  lg:h-full 
+                  lg:w-full">
                   <EvervaultCard text={project.name} />
                 </div>
               );
