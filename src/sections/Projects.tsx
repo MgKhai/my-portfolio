@@ -73,8 +73,6 @@ export const ProjectsSection = () => {
         />
         <div className="flex flex-col mt-10 md:mt-20 gap-20">
           {portfolioProjects.map((project, projectIndex) => {
-            
-            // LOGIC: Create a variable to hold the media
             let projectMedia;
 
             if (project.title.includes("API")) {
