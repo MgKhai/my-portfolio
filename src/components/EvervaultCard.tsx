@@ -1,0 +1,78 @@
+'use client';
+import { useMotionValue, useMotionTemplate, motion } from 'framer-motion';
+import React, { useState } from 'react';
+
+const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$';
+const generateRandomString = (length: number) => {
+  let result = '';
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return result;
+};
+
+export const EvervaultCard = ({
+  text,
+  className,
+}: {
+  text?: string;
+  className?: string;
+}) => {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const [randomString, setRandomString] = useState('');
+
+  function onMouseMove({ currentTarget, clientX, clientY }: any) {
+    const { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+    setRandomString(generateRandomString(2000));
+  }
+
+  return (
+    <div
+      className={`bg-black/60 rounded flex items-center justify-center w-full h-full relative group/card ${className}`}
+      onMouseMove={onMouseMove}
+    >
+      <div className="absolute inset-0 overflow-hidden">
+        <CardPattern
+          mouseX={mouseX}
+          mouseY={mouseY}
+          randomString={randomString}
+        />
+      </div>
+      
+      <div className="relative p-10 z-10 flex items-center justify-center">
+        <div className="relative h-32 w-32  md:h-44 md:w-44 rounded-full flex items-center justify-center text-white font-bold text-xl md:text-2xl text-center p-4">
+          <div className="absolute w-full h-full bg-black/70 blur-lg rounded-full" />
+          <span className="z-20 text-white font-semibold uppercase tracking-widest font-mono">
+            {text}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export function CardPattern({ mouseX, mouseY, randomString }: any) {
+  const maskImage = useMotionTemplate`radial-gradient(250px at ${mouseX}px ${mouseY}px, white, transparent)`;
+  const style = { maskImage, WebkitMaskImage: maskImage };
+
+  return (
+    <div className="pointer-events-none absolute inset-0">
+      <div className="absolute inset-0 [mask-image:linear-gradient(white,transparent)] group-hover/card:opacity-50"></div>
+      <motion.div
+        className="absolute rounded inset-0 bg-gradient-to-r from-fuchsia-600 to-blue-600 opacity-0 group-hover/card:opacity-100 backdrop-blur-xl transition duration-500"
+        style={style}
+      />
+      <motion.div
+        className="absolute inset-0 opacity-0 mix-blend-overlay group-hover/card:opacity-100"
+        style={style}
+      >
+        <p className="absolute inset-x-0 text-sm h-full break-words whitespace-pre-wrap text-white font-mono font-bold transition duration-500">
+          {randomString}
+        </p>
+      </motion.div>
+    </div>
+  );
+}
