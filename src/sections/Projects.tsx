@@ -1,6 +1,7 @@
 import adidasTurkey from "@/assets/images/adidas_turkey.png";
 import bootstrapPortfolio from "@/assets/images/portfolio_testing.png";
 import pizzaManagement from "@/assets/images/pizza_order_management.png";
+import severCode from "@/assets/images/servercode.jpg";
 import Image from "next/image";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
@@ -18,7 +19,7 @@ const portfolioProjects = [
       { title: "mysql", icon: "/icons/mysql-original.svg" },
     ],
     github: "https://github.com/MgKhai/instagram-clone-backend",
-    image: null
+    image: severCode
   },
   {
     title: "Pizza Order Management System",
@@ -78,7 +79,6 @@ export const ProjectsSection = () => {
 
             if (project.title.includes("API")) {
               projectMedia = (
-                // Matches your image UI classes exactly
                 <div className=" mt-8 -mb-6 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-full max-h-[170px]  md:min-w-[500px] md:min-h-[300px]">
                   <EvervaultCard text={project.name} />
                 </div>
@@ -127,7 +127,6 @@ export const ProjectsSection = () => {
                     </div>
                   </div>
 
-                  {/* RIGHT SIDE: Displays the if/else result */}
                   <div className="relative">
                     {projectMedia}
                   </div>
